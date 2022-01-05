@@ -1,6 +1,6 @@
 #include "vec.h"
 #include <math.h>
-
+#include <stdio.h>
 //ivec2
 float msqglm_ivec2_length(msqglm_ivec2 v)
 {
@@ -35,6 +35,11 @@ void msqglm_ivec2_mul(msqglm_ivec2 v, float k, msqglm_ivec2 *ans)
     (*ans)[1] = v[1] * k;
 }
 
+void msqglm_ivec2_sprint(char* string, msqglm_ivec2 v)
+{
+    sprintf(string, "ivec2 { x: %d, y: %d }\n", v[0], v[1]);
+}
+
 //vec2
 float msqglm_vec2_length(msqglm_vec2 v)
 {
@@ -67,6 +72,11 @@ void msqglm_vec2_mul(msqglm_vec2 v, float k, msqglm_vec2 *ans)
 {
     (*ans)[0] = v[0] * k;
     (*ans)[1] = v[1] * k;
+}
+
+void msqglm_vec2_sprint(char* string, msqglm_vec2 v)
+{
+    sprintf(string, "vec2 { x: %f, y: %f }\n", v[0], v[1]);
 }
 
 void msqglm_ivec2_to_vec2(msqglm_ivec2 a, msqglm_vec2* ans)
@@ -119,6 +129,11 @@ void msqglm_ivec3_cross(msqglm_ivec3 a, msqglm_ivec3 b, msqglm_ivec3 *ans)
     (*ans)[2] = a[0] * b[1] - a[1] * b[0]; 
 }
 
+void msqglm_ivec3_sprint(char* string, msqglm_ivec3 v)
+{
+    sprintf(string, "ivec3 { x: %d, y: %d, z: %d }\n", v[0], v[1], v[2]);
+}
+
 //vec3
 float msqglm_vec3_length(msqglm_vec3 v)
 {
@@ -161,6 +176,11 @@ void msqglm_vec3_cross(msqglm_vec3 a, msqglm_vec3 b, msqglm_vec3 *ans)
     (*ans)[0] = a[1] * b[2] - a[2] * b[1]; 
     (*ans)[1] = a[2] * b[0] - a[0] * b[2]; 
     (*ans)[2] = a[0] * b[1] - a[1] * b[0]; 
+}
+
+void msqglm_vec3_sprint(char* string, msqglm_vec3 v)
+{
+    sprintf(string, "vec3 { x: %f, y: %f, z: %f }\n", v[0], v[1], v[2]);
 }
 
 void msqglm_ivec3_to_vec3(msqglm_ivec3 a, msqglm_vec3* ans)
@@ -210,6 +230,11 @@ void msqglm_ivec4_mul(msqglm_ivec4 v, float k, msqglm_ivec4 *ans)
     (*ans)[3] = v[3] * k;
 }
 
+void msqglm_ivec4_sprint(char* string, msqglm_ivec4 v)
+{
+    sprintf(string, "ivec4 { x: %d, y: %d, z: %d, w: %d }\n", v[0], v[1], v[2], v[3]);
+}
+
 //vec4
 float msqglm_vec4_length(msqglm_vec4 v)
 {
@@ -248,6 +273,11 @@ void msqglm_vec4_mul(msqglm_vec4 v, float k, msqglm_vec4 *ans)
     (*ans)[1] = v[1] * k;
     (*ans)[2] = v[2] * k;
     (*ans)[3] = v[3] * k;
+}
+
+void msqglm_vec4_sprint(char* string, msqglm_vec4 v)
+{
+    sprintf(string, "vec4 { x: %f, y: %f, z: %f, w: %f }\n", v[0], v[1], v[2], v[3]);
 }
 
 void msqglm_ivec4_to_vec4(msqglm_ivec4 a, msqglm_vec4* ans)

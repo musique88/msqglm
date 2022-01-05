@@ -1,6 +1,6 @@
 #include "mat.h"
 #include <math.h>
-
+#include <stdio.h>
 
 void msqglm_mat4_transpose(msqglm_mat4 m, msqglm_mat4* dest)
 {
@@ -42,6 +42,19 @@ void msqglm_mat4_mul(msqglm_mat4 a, msqglm_mat4 b, msqglm_mat4* dest)
     for(int i = 0; i < 4; i++)
         for(j = 0; j < 4; j++)
             (*dest)[i][j] = msqglm_vec4_dot(a[i], m[j]);   
+}
+
+void msqglm_mat4_sprint(char* string, msqglm_mat4 m)
+{
+    char str_vec1[40]; 
+    char str_vec2[40]; 
+    char str_vec3[40]; 
+    char str_vec4[40]; 
+    msqglm_vec4_sprint(str_vec1, m[0]);
+    msqglm_vec4_sprint(str_vec2, m[1]);
+    msqglm_vec4_sprint(str_vec3, m[2]);
+    msqglm_vec4_sprint(str_vec4, m[3]);
+    sprintf(string, "mat4 {\n\t%s,\t%s,\t%s,\t%s\n}\n",str_vec1,str_vec2,str_vec3,str_vec4);
 }
 
 void msqglm_mat4_empty(msqglm_mat4* dest)

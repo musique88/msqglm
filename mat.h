@@ -7,6 +7,7 @@ void msqglm_mat4_mul_k(msqglm_mat4 src, float k, msqglm_mat4* dest);
 void msqglm_mat4_add(msqglm_mat4 a, msqglm_mat4 b, msqglm_mat4* dest);
 void msqglm_mat4_sub(msqglm_mat4 a, msqglm_mat4 b, msqglm_mat4* dest);
 void msqglm_mat4_mul(msqglm_mat4 a, msqglm_mat4 b, msqglm_mat4* dest);
+void msqglm_mat4_sprint(char*, msqglm_mat4 m);
 
 void msqglm_mat4_empty(msqglm_mat4* dest);
 void msqglm_mat4_identity(msqglm_mat4* dest);
