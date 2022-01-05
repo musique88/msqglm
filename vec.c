@@ -1,4 +1,4 @@
-#include "../inc/vec.h"
+#include "vec.h"
 #include <math.h>
 
 //ivec2
